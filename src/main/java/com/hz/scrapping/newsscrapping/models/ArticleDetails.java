@@ -1,5 +1,8 @@
 package com.hz.scrapping.newsscrapping.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 public class ArticleDetails {
 	
 	private String articleId;
@@ -7,24 +10,31 @@ public class ArticleDetails {
 	private String heading;
 	private String detailedArticle;
 	
+	@JsonInclude(Include.NON_NULL)
 	public String getArticleId() {
 		return articleId;
 	}
 	public void setArticleId(String articleId) {
 		this.articleId = articleId;
 	}
+	
+	@JsonInclude(Include.NON_NULL)
 	public String getAuthorName() {
 		return authorName;
 	}
 	public void setAuthorName(String htmlElement) {
 		this.authorName = htmlElement;
 	}
+	
+	@JsonInclude(Include.NON_NULL)
 	public String getHeading() {
 		return heading;
 	}
 	public void setHeading(String heading) {
 		this.heading = heading;
 	}
+	
+	@JsonInclude(Include.NON_NULL)
 	public String getDetailedArticle() {
 		return detailedArticle;
 	}
