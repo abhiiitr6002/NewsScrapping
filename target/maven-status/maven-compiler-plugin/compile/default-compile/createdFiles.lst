@@ -1,8 +1,0 @@
-com\hz\scrapping\newsscrapping\repository\ArticleRepository.class
-com\hz\scrapping\newsscrapping\models\ArticleDetails.class
-com\hz\scrapping\newsscrapping\controller\ScrappingController.class
-com\hz\scrapping\newsscrapping\ScrappingApplication.class
-com\hz\scrapping\newsscrapping\service\ScrappingService.class
-com\hz\scrapping\newsscrapping\scrapper\ScrappingUtility.class
-com\hz\scrapping\newsscrapping\service\impl\ScrappingServiceImpl.class
-com\hz\scrapping\newsscrapping\models\ArticleHeading.class
