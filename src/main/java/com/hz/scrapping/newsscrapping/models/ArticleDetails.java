@@ -1,10 +1,15 @@
 package com.hz.scrapping.newsscrapping.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class ArticleDetails {
 	
+	@Id
+	@Indexed
 	private String articleId;
 	private String authorName;
 	private String heading;

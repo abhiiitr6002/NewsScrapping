@@ -51,18 +51,23 @@ public class ScrappingUtility {
 					List<HtmlElement> articleIdElement = (List<HtmlElement>) (Object)articlePage.getByXPath("//div[@class='articlepage']");
 					List<HtmlElement> authorName = (List<HtmlElement>) (Object)articlePage.getByXPath("//a[starts-with(@class,'auth-nm')]") ;
 					List<HtmlElement> articleElement = (List<HtmlElement>) (Object)articlePage.getByXPath("//div[starts-with(@id,'content-body')]/p") ;
-					/*for(HtmlElement idElement: articleIdElement) {
-						HtmlAnchor itemAnchor1 = ((HtmlAnchor) idElement.getFirstByXPath(".//div"));
-						String articleId = itemAnchor1.getAttribute("data-artid");
-						System.out.println("articl"+articleId);
-					}*/
 					if(articleElement.isEmpty()) {
 						System.out.println("No content found here");
 					}else {
 					//  System.out.println(articleElement.size());
 					//	System.out.println(articleElement.get(0);
 					//	System.out.println(authorName.get(0).asText());
+						
+						
 						ArticleDetails details = new ArticleDetails();
+						
+						for(HtmlElement idElement: articleIdElement) {
+							/*HtmlAnchor itemAnchor1 = ((HtmlAnchor) idElement.getFirstByXPath(".//div"));
+							String articleId = itemAnchor1.getAttribute("data-artid");*/
+							String articleId = idElement.getAttribute("data-artid");
+							details.setArticleId(articleId);
+						}
+						
 						StringBuilder builder = new StringBuilder();
 						for(HtmlElement element1:articleIdElement) {
 							builder.append(element1.asText());
